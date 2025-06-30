@@ -1,220 +1,132 @@
-# 🎵 MidiModel-Creator
+<div align="center">
+  <img src="https://raw.githubusercontent.com/WebChatAppAi/Orpheus-Midi-Model-Maker/main/image1.png" alt="Orpheus MIDI Model Maker Showcase" width="700"/>
+  <h1>Orpheus MIDI Model Maker</h1>
+  <p>
+    <b>The easiest way to create AI melody generators from your own MIDI files!</b>
+  </p>
+  <p>
+    Got a folder of MIDI files? Turn them into a personalized AI model that composes new melodies just for you. No coding, no complicated setup—just your music, your style, your AI.
+  </p>
+</div>
 
-![Orpheus CLI Interface](image1.png)
+---
 
-**Create AI melody generators from your MIDI files!**
+## ✨ Features
 
-Transform your collection of MIDI files into a trained AI model that can generate new melodies in the same style. Perfect for musicians, composers, and AI enthusiasts who want to create personalized m[...]
+- **🎵 **One-Click Start**: Launch a simple, friendly command-line interface with `python app.py`.
+- **📂 **Effortless File Finding**: Just point to a folder—our tool finds **all** MIDI files, even in subdirectories.
+- **⚙️ **Smart Auto-Configuration**: Automatically detects your hardware (GPU/CPU) and suggests the best settings for you.
+- **🤖 **Train, Don't Tweak**: The app generates a ready-to-use configuration file. No more manual setup unless you want to dive deep.
+- **📊 **Live Dashboard**: Watch your model learn in real-time with a beautiful, live-updating dashboard.
+- **🎹 **Test Your Creations**: A clear path to use your trained model in a fun, interactive piano roll application.
 
-## ✨ What This Project Does
+---
 
-**MidiModel-Creator** is a complete pipeline that:
+## 🚀 Quick Start: Your First AI Model in Minutes
 
-1. **📁 Processes MIDI Files** → Converts your MIDI collection into AI-ready training data
-2. **🤖 Trains AI Models** → Creates transformer-based melody generation models  
-3. **🎵 Generates New Music** → Produces original melodies in your musical style
-
-## 🎯 Key Features
-
-### 🔧 **Dataset Creation**
-- **Smart MIDI Processing**: Optimized for melody extraction from any MIDI file
-- **Small File Support**: Works with short melodies (as few as 8 notes)
-- **Quality Filtering**: Automatically removes poor-quality or corrupted files
-- **Multi-instrument Handling**: Extracts melody lines from complex arrangements
-
-### 🚀 **Advanced Training**
-- **Beautiful CLI Interface**: Professional progress tracking and monitoring
-- **GPU Optimized**: Automatic memory optimization for different GPU sizes
-- **Real-time Monitoring**: Live loss/accuracy graphs and training statistics
-- **Sample Generation**: Creates MIDI samples during training to monitor quality
-- **Auto Checkpoints**: Never lose training progress with automatic saves
-
-### ⚙️ **User-Friendly**
-- **No Coding Required**: Simple setup and configuration files
-- **Flexible Configuration**: YAML-based settings for easy customization
-- **Global Ready**: Works on any Linux system with CUDA GPU
-
-### 🎵 **New! Orpheus CLI Interface**
-- **Unified Experience**: Single entry point for all features
-- **Smart Configuration**: Auto-detects GPU and suggests optimal settings
-- **Live Dashboard**: Real-time training monitoring with progress bars
-- **Beautiful UI**: Professional terminal interface with Rich library
-- **Guided Workflow**: Step-by-step guidance through the entire process
-
-## 📋 Requirements
-
-- **OS**: Linux (Ubuntu recommended)
-- **GPU**: NVIDIA GPU with CUDA support (8GB+ VRAM recommended)
-- **Python**: 3.8+
-- **Storage**: ~5GB for dependencies + space for your MIDI files
-
-## 🚀 Quick Start
+Let's say you have a folder named `MyMIDIs` on your computer, filled with your favorite MIDI tracks. Here’s how you turn them into an AI model:
 
 ### 1. **Setup**
+
+Clone the repository and install the necessary packages. This gets the tool ready.
+
 ```bash
 git clone https://github.com/WebChatAppAi/Orpheus-Midi-Model-Maker
 cd Orpheus-Midi-Model-Maker
-bash setup.sh
-pip install -r cli/requirements.txt  # Install CLI dependencies
+pip install -r requirements.txt
 ```
 
-### 2. **Run Unified CLI (Recommended)**
+### 2. **Launch the App**
+
+Run the main application.
+
 ```bash
 python app.py
 ```
 
-This launches the **Orpheus Midi Model Maker** - a beautiful unified interface that guides you through:
-- 🎼 Creating datasets from MIDI files
-- ✅ Validating your datasets
-- 🚀 Training with auto-configured settings
-- 📊 Live training dashboard with real-time metrics
+### 3. **Create Your Dataset**
 
-### Alternative: Use Individual Scripts
+1.  From the main menu, choose **`Manage Datasets`**, then **`Create a New Dataset`**.
+2.  When asked for the path to your MIDI files, just enter the path to your `MyMIDIs` folder.
+    - *The tool will scan every subfolder inside `MyMIDIs` to find all `.mid` files.*
+3.  Give your dataset a simple name (e.g., `my-awesome-melodies`).
 
-#### Create Dataset
-```bash
-cd DatasetCreation
-python start.py
-# Choose "Create New Dataset"
-# Provide path to your MIDI files
-```
+The tool will process the files and prepare them for training.
 
-#### Train Model
-```bash
-cd ../TrainingModel
-python app.py
-# Provide path to your training config YAML
-```
+### 4. **Train Your Model**
 
-### 4. **Generate Music**
-Your trained model will automatically generate sample MIDI files during training!
+1.  Go back to the main menu and select **`Manage Models`**, then **`Start a New Training Session`**.
+2.  The app will automatically create an optimal configuration (`.yml` file) for you. Just press **Enter** to use it.
+3.  The training begins! Your live dashboard will appear, showing you the progress.
+
+Once training is complete, your final AI model will be saved as a `.pth` file inside the `TrainingModel/models/` directory.
+
+---
+
+## 🎹 Using Your Trained AI Model
+
+The training process creates a powerful AI model file (`.pth`), not just sample MIDI files. To use this model and generate new music, you can load it into our **MIDI-Gen Piano Roll** application.
+
+**➡️ [Use Your Model with MIDI-Gen Piano Roll](https://github.com/WebChatAppAi/midi-gen)**
+
+<a href="https://github.com/WebChatAppAi/midi-gen">
+  <img src="https://user-images.githubusercontent.com/125438147/285415912-55565510-5022-445b-8b02-354a6b0c0612.png" alt="MIDI-Gen Piano Roll" width="500"/>
+</a>
+
+**How it works:**
+1.  Find your trained model in `TrainingModel/models/your_model.pth`.
+2.  Launch the MIDI-Gen Piano Roll application.
+3.  Load your `.pth` file into the app to start generating and listening to new melodies created by your very own AI!
+
+*(The MIDI files saved in the `samples` folder during training are just for a quick preview to see how the training is progressing.)*
+
+---
 
 ## 📂 Project Structure
 
 ```
-MidiModel-Creator/
-├── app.py                # New! Unified CLI entry point
-├── cli/                  # New! CLI interface modules
-│   ├── menu.py          # Main menu system
-│   ├── dataset_cli.py   # Dataset management
-│   ├── training_cli.py  # Training management
-│   ├── config_generator.py # Auto-configuration
-│   ├── dashboard.py     # Live training monitor
-│   └── utils.py         # Shared utilities
-├── setup.sh              # One-time setup script
-├── DATA/                 # Processed datasets
-├── DatasetCreation/      # MIDI processing tools
-│   ├── start.py         # Main interface
-│   ├── processdata.py   # MIDI processor
-│   └── verifydata.py    # Dataset validator
-└── TrainingModel/        # AI training module
-    ├── app.py           # Training interface
-    ├── config.py        # Configuration manager
-    ├── trainer.py       # Training engine
-    └── sample_config.yml # Example settings
+Orpheus-Midi-Model-Maker/
+├── app.py                # The only file you need to run!
+├── cli/                  # Modules for the command-line interface
+├��─ DATA/                 # Your processed datasets live here
+├── DatasetCreation/      # Scripts for processing MIDI files
+└── TrainingModel/        # Scripts for training the AI model
+    ├── models/           # Your final .pth models are saved here!
+    ├── samples/          # MIDI samples generated during training
+    └── sample_config.yml # An example configuration file
 ```
 
-## 🎵 What You Get
-
-### **Input**: Your MIDI Files
-- Classical compositions
-- Jazz standards  
-- Pop melodies
-- Electronic music
-- Any MIDI format
-
-### **Output**: Trained AI Model
-- Generates new melodies in your style
-- Customizable length and creativity
-- Professional MIDI output
-- Ready for use in DAWs
-
-## 🔧 Configuration
-
-Create a YAML config file to customize training:
-
-```yaml
-# Dataset path
-dataset:
-  path: "./DATA"
-
-# Model size (adjust for your GPU)
-model:
-  seq_len: 2048    # Context length
-  dim: 1280        # Model size
-  depth: 8         # Transformer layers
-  heads: 20        # Attention heads
-
-# Training settings
-training:
-  batch_size: 8              # Batch size
-  gradient_accumulate_every: 6
-  learning_rate: 0.0001
-  num_epochs: 5
-
-# Output paths
-output:
-  model_dir: "./models"
-  sample_dir: "./samples"
-```
+---
 
 ## 💡 GPU Memory Guide
 
+The app auto-configures this, but if you want to customize your `.yml` file manually, here’s a guide:
+
 | GPU Memory | Recommended Settings |
 |------------|---------------------|
-| 8GB        | seq_len: 512, dim: 768, batch_size: 1 |
-| 12GB       | seq_len: 1024, dim: 1024, batch_size: 2 |
-| 16GB       | seq_len: 2048, dim: 1280, batch_size: 4 |
-| 24GB+      | seq_len: 4096, dim: 1536, batch_size: 8 |
+| 8GB        | `seq_len: 512`, `dim: 768`, `batch_size: 1` |
+| 12GB       | `seq_len: 1024`, `dim: 1024`, `batch_size: 2` |
+| 16GB       | `seq_len: 2048`, `dim: 1280`, `batch_size: 4` |
+| 24GB+      | `seq_len: 4096`, `dim: 1536`, `batch_size: 8` |
 
-## 🎯 Use Cases
-
-- **🎼 Composers**: Generate melodic ideas and variations
-- **🎮 Game Developers**: Create dynamic background music
-- **📚 Music Students**: Analyze and learn from different musical styles  
-- **🤖 AI Researchers**: Experiment with music generation models
-- **🎵 Musicians**: Explore new creative possibilities
+---
 
 ## 🚨 What This Project Does NOT Do
 
-- ❌ Generate full arrangements (drums, bass, harmony)
-- ❌ Handle audio files (only MIDI)
-- ❌ Real-time generation (training required first)
-- ❌ Work without NVIDIA GPU
+- ❌ Generate full arrangements (drums, bass, etc.). It focuses purely on melody.
+- ❌ Handle audio files (like `.mp3` or `.wav`). It's MIDI-only.
+- ❌ Work without an NVIDIA GPU for training.
 
-## 📊 Expected Results
-
-### **Training Time**
-- **Small dataset** (1,000 files): 2-4 hours
-- **Medium dataset** (10,000 files): 8-12 hours  
-- **Large dataset** (50,000+ files): 24-48 hours
-
-### **Output Quality**
-- **Beginner**: Recognizable melodies after 1 epoch
-- **Good**: Musical coherence after 3 epochs
-- **Excellent**: Style-accurate generation after 5 epochs
-
-## 🛠️ Troubleshooting
-
-**Out of Memory?** → Reduce `batch_size` and `seq_len` in config  
-**No MIDI files found?** → Check file extensions (.mid, .midi)  
-**Poor quality output?** → Increase training time or improve input data quality  
-**Training too slow?** → Increase `batch_size` if you have more GPU memory
+---
 
 ## 🤝 Contributing
 
-This project is built on:
-- **[tegridy-tools](https://github.com/asigalov61/tegridy-tools)** - MIDI processing
-- **[X-Transformer](https://github.com/lucidrains/x-transformers)** - Transformer architecture
-- **PyTorch** - Deep learning framework
+This project is built on the amazing work of the open-source community. A special thanks to the creators of **[tegridy-tools](https://github.com/asigalov61/tegridy-tools)** and **[X-Transformer](https://github.com/lucidrains/x-transformers)**.
 
-## 📄 License
-
-[Add your chosen license here]
-
-## 🎵 Happy Music Making!
-
-Transform your MIDI collection into an AI composer and discover new musical possibilities!
+Contributions are welcome! Please open an issue or submit a pull request.
 
 ---
-*Made with ❤️ for the music and AI community*
+
+<div align="center">
+  <b>🎵 Happy Music Making! 🎵</b>
+</div>

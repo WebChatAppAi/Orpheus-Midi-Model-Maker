@@ -1,0 +1,68 @@
+# MIDI Model Creator - Training Configuration
+# Copy this file and customize for your training
+
+# Dataset Configuration
+dataset:
+  path: "../DATA"  # Path to directory containing pickle files (supports subdirectories)
+
+# Model Architecture (adjust based on your GPU memory)
+model:
+  seq_len: 1024      # Sequence length (1024 for small GPU, 8192 for large GPU)
+  dim: 1024          # Model dimension (1024 for small GPU, 2048 for large GPU)
+  depth: 6           # Number of transformer layers (6 for small GPU, 8 for large GPU)
+  heads: 16          # Number of attention heads (16 for small GPU, 32 for large GPU)
+
+# Training Parameters
+training:
+  # Core parameters
+  batch_size: 2                    # Batch size (2 for small GPU, 9 for large GPU)
+  gradient_accumulate_every: 16    # Gradient accumulation (increase for effective larger batch)
+  learning_rate: 0.0001           # Learning rate
+  num_epochs: 5                   # Number of training epochs
+  
+  # Monitoring parameters
+  validate_every: 100             # Validate every N steps
+  save_every: 500                 # Save checkpoint every N steps
+  generate_every: 250             # Generate sample every N steps
+  print_stats_every: 10           # Print stats every N steps
+  
+  # Other parameters
+  grad_clip: 1.0                  # Gradient clipping
+  generate_length: 512            # Length of generated samples
+
+# Output Configuration
+output:
+  model_dir: "./models"           # Directory to save model checkpoints
+  sample_dir: "./samples"         # Directory to save generated samples
+
+# GPU Memory Optimization Presets (uncomment one)
+
+# SMALL GPU (8GB VRAM or less) - Recommended for RTX 3070, RTX 4060, etc.
+# model:
+#   seq_len: 512
+#   dim: 768
+#   depth: 4
+#   heads: 12
+# training:
+#   batch_size: 1
+#   gradient_accumulate_every: 32
+
+# MEDIUM GPU (12-16GB VRAM) - Recommended for RTX 3080, RTX 4070 Ti, etc.
+# model:
+#   seq_len: 1024
+#   dim: 1024
+#   depth: 6
+#   heads: 16
+# training:
+#   batch_size: 2
+#   gradient_accumulate_every: 16
+
+# LARGE GPU (24GB+ VRAM) - Recommended for RTX 4090, A100, etc.
+# model:
+#   seq_len: 2048
+#   dim: 2048
+#   depth: 8
+#   heads: 32
+# training:
+#   batch_size: 4
+#   gradient_accumulate_every: 8
