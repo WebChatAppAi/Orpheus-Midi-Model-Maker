@@ -64,7 +64,7 @@ cd Orpheus-Midi-Model-Maker
 
 ### **Step 2: Setup Dependencies**
 
-First, clone the required tegridy-tools repository:
+Clone the required tegridy-tools repository:
 
 ```bash
 git clone https://github.com/asigalov61/tegridy-tools.git
