@@ -1,50 +1,94 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/WebChatAppAi/Orpheus-Midi-Model-Maker/main/image1.png" alt="Orpheus MIDI Model Maker Showcase" width="700"/>
-  <h1>Orpheus MIDI Model Maker</h1>
-  <p>
-    <b>The easiest way to create AI melody generators from your own MIDI files!</b>
+  
+  ![Orpheus MIDI Model Maker](https://raw.githubusercontent.com/WebChatAppAi/Orpheus-Midi-Model-Maker/main/image1.png)
+  
+  # 🎼 Orpheus MIDI Model Maker
+  
+  ### *Transform your MIDI collection into personalized AI composers*
+  
+  <p align="center">
+    <img src="https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+    <img src="https://img.shields.io/badge/CUDA-Required-green?style=for-the-badge&logo=nvidia&logoColor=white" alt="CUDA">
+    <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License">
   </p>
-  <p>
-    Got a folder of MIDI files? Turn them into a personalized AI model that composes new melodies just for you. No coding, no complicated setup—just your music, your style, your AI.
-  </p>
+  
+  > 🚀 **No coding experience required** | 🎯 **Your music, your style, your AI** | 🔥 **Production-ready models**
+  
 </div>
 
+<br>
+
+## ✨ **What Makes This Special?**
+
+<table>
+<tr>
+<td width="50%">
+
+### 🎵 **One-Click Magic**
+Launch with a single command and let our intuitive CLI guide you through everything.
+
+### 📂 **Smart File Discovery** 
+Drop in any folder structure - we'll find every MIDI file, even in nested directories.
+
+### ⚙️ **Auto-Configuration**
+Hardware detection and optimal settings configuration - no manual tweaks needed.
+
+</td>
+<td width="50%">
+
+### 🤖 **Train, Don't Code**
+Focus on your music while our engine handles the complex AI training pipeline.
+
+### 📊 **Real-Time Dashboard**
+Watch your model evolve with beautiful, live-updating training visualizations.
+
+### 🎹 **Instant Deployment**
+Export ready-to-use models for immediate music generation in our Piano Roll app.
+
+</td>
+</tr>
+</table>
+
 ---
 
-## ✨ Features
+## 🚀 **Quick Start Guide**
 
-- **🎵 **One-Click Start**: Launch a simple, friendly command-line interface with `python app.py`.
-- **📂 **Effortless File Finding**: Just point to a folder—our tool finds **all** MIDI files, even in subdirectories.
-- **⚙️ **Smart Auto-Configuration**: Automatically detects your hardware (GPU/CPU) and suggests the best settings for you.
-- **🤖 **Train, Don't Tweak**: The app generates a ready-to-use configuration file. No more manual setup unless you want to dive deep.
-- **📊 **Live Dashboard**: Watch your model learn in real-time with a beautiful, live-updating dashboard.
-- **🎹 **Test Your Creations**: A clear path to use your trained model in a fun, interactive piano roll application.
+> **Prerequisites**: Python 3.8+, NVIDIA GPU with CUDA support
 
----
-
-## 🚀 Quick Start: Your First AI Model in Minutes
-
-Let's say you have a folder named `MyMIDIs` on your computer, filled with your favorite MIDI tracks. Here’s how you turn them into an AI model:
-
-### 1. **Setup**
-
-Clone the repository and install the necessary packages. This gets the tool ready.
+### **Step 1: Clone the Repository**
 
 ```bash
 git clone https://github.com/WebChatAppAi/Orpheus-Midi-Model-Maker
 cd Orpheus-Midi-Model-Maker
+```
+
+### **Step 2: Setup Dependencies**
+
+First, clone the required tegridy-tools repository:
+
+```bash
+git clone https://github.com/asigalov61/tegridy-tools.git
+```
+
+Then install the Python requirements:
+
+```bash
 pip install -r requirements.txt
 ```
 
-### 2. **Launch the App**
-
-Run the main application.
+### **Step 3: Launch the Application**
 
 ```bash
 python app.py
 ```
 
-### 3. **Create Your Dataset**
+---
+
+## 🎯 **Create Your First AI Model**
+
+Let's say you have a folder named `MyMIDIs` filled with your favorite MIDI tracks. Here's how to transform them into an AI composer:
+
+### **1. Create Your Dataset**
 
 1.  From the main menu, choose **`Manage Datasets`**, then **`Create a New Dataset`**.
 2.  When asked for the path to your MIDI files, just enter the path to your `MyMIDIs` folder.
@@ -53,7 +97,7 @@ python app.py
 
 The tool will process the files and prepare them for training.
 
-### 4. **Train Your Model**
+### **2. Train Your Model**
 
 1.  Go back to the main menu and select **`Manage Models`**, then **`Start a New Training Session`**.
 2.  The app will automatically create an optimal configuration (`.yml` file) for you. Just press **Enter** to use it.
@@ -63,70 +107,122 @@ Once training is complete, your final AI model will be saved as a `.pth` file in
 
 ---
 
-## 🎹 Using Your Trained AI Model
+## 🎹 **Using Your Trained AI Model**
 
 The training process creates a powerful AI model file (`.pth`), not just sample MIDI files. To use this model and generate new music, you can load it into our **MIDI-Gen Piano Roll** application.
 
 **➡️ [Use Your Model with MIDI-Gen Piano Roll](https://github.com/WebChatAppAi/midi-gen)**
 
-<a href="https://github.com/WebChatAppAi/midi-gen">
-  <img src="https://user-images.githubusercontent.com/125438147/285415912-55565510-5022-445b-8b02-354a6b0c0612.png" alt="MIDI-Gen Piano Roll" width="500"/>
-</a>
+<div align="center">
+  <a href="https://github.com/WebChatAppAi/midi-gen">
+    <img src="https://github.com/WebChatAppAi/midi-gen/blob/main/image2.png?raw=true" alt="MIDI-Gen Piano Roll" width="600" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+  </a>
+</div>
 
-**How it works:**
-1.  Find your trained model in `TrainingModel/models/your_model.pth`.
-2.  Launch the MIDI-Gen Piano Roll application.
-3.  Load your `.pth` file into the app to start generating and listening to new melodies created by your very own AI!
+### **How it works:**
+1.  🎯 Find your trained model in `TrainingModel/models/your_model.pth`
+2.  🚀 Launch the MIDI-Gen Piano Roll application
+3.  🎵 Load your `.pth` file into the app to start generating and listening to new melodies created by your very own AI!
 
-*(The MIDI files saved in the `samples` folder during training are just for a quick preview to see how the training is progressing.)*
+> 💡 *The MIDI files saved in the `samples` folder during training are just for a quick preview to see how the training is progressing.*
 
 ---
 
-## 📂 Project Structure
+## 📂 **Project Structure**
 
 ```
 Orpheus-Midi-Model-Maker/
-├── app.py                # The only file you need to run!
-├── cli/                  # Modules for the command-line interface
-├��─ DATA/                 # Your processed datasets live here
-├── DatasetCreation/      # Scripts for processing MIDI files
-└── TrainingModel/        # Scripts for training the AI model
-    ├── models/           # Your final .pth models are saved here!
-    ├── samples/          # MIDI samples generated during training
-    └── sample_config.yml # An example configuration file
+├── 🚀 app.py                # Main application - your entry point!
+├── 📁 cli/                  # Intuitive command-line interface modules
+├── 💾 DATA/                 # Your processed datasets storage
+├── 🔧 DatasetCreation/      # MIDI processing & preparation scripts
+├── 🤖 tegridy-tools/        # Required dependency (cloned separately)
+└── 🎯 TrainingModel/        # AI training engine
+    ├── 🎼 models/           # Your final .pth models saved here!
+    ├── 🎵 samples/          # MIDI samples generated during training
+    └── ⚙️ sample_config.yml # Example configuration template
 ```
 
 ---
 
-## 💡 GPU Memory Guide
+## 🔧 **GPU Memory Optimization Guide**
 
-The app auto-configures this, but if you want to customize your `.yml` file manually, here’s a guide:
+The app auto-configures optimal settings, but for manual customization of your `.yml` configuration:
 
-| GPU Memory | Recommended Settings |
-|------------|---------------------|
-| 8GB        | `seq_len: 512`, `dim: 768`, `batch_size: 1` |
-| 12GB       | `seq_len: 1024`, `dim: 1024`, `batch_size: 2` |
-| 16GB       | `seq_len: 2048`, `dim: 1280`, `batch_size: 4` |
-| 24GB+      | `seq_len: 4096`, `dim: 1536`, `batch_size: 8` |
+<table align="center">
+<tr>
+<th>🎮 GPU Memory</th>
+<th>⚡ Recommended Settings</th>
+<th>🎯 Performance</th>
+</tr>
+<tr>
+<td><strong>8GB</strong></td>
+<td><code>seq_len: 512</code><br><code>dim: 768</code><br><code>batch_size: 1</code></td>
+<td>🟡 Good</td>
+</tr>
+<tr>
+<td><strong>12GB</strong></td>
+<td><code>seq_len: 1024</code><br><code>dim: 1024</code><br><code>batch_size: 2</code></td>
+<td>🟢 Better</td>
+</tr>
+<tr>
+<td><strong>16GB</strong></td>
+<td><code>seq_len: 2048</code><br><code>dim: 1280</code><br><code>batch_size: 4</code></td>
+<td>🔥 Great</td>
+</tr>
+<tr>
+<td><strong>24GB+</strong></td>
+<td><code>seq_len: 4096</code><br><code>dim: 1536</code><br><code>batch_size: 8</code></td>
+<td>⚡ Excellent</td>
+</tr>
+</table>
 
 ---
 
-## 🚨 What This Project Does NOT Do
+## ⚠️ **Important Limitations**
 
-- ❌ Generate full arrangements (drums, bass, etc.). It focuses purely on melody.
-- ❌ Handle audio files (like `.mp3` or `.wav`). It's MIDI-only.
-- ❌ Work without an NVIDIA GPU for training.
+<div align="center">
+
+| ❌ **What We DON'T Do** | ✅ **What We DO** |
+|--------------------------|-------------------|
+| Generate full arrangements (drums, bass, etc.) | Focus on beautiful melody generation |
+| Handle audio files (`.mp3`, `.wav`) | Process MIDI files exclusively |
+| Work without NVIDIA GPU | Require CUDA for optimal training |
+
+</div>
 
 ---
 
-## 🤝 Contributing
+## 🤝 **Contributing & Credits**
 
-This project is built on the amazing work of the open-source community. A special thanks to the creators of **[tegridy-tools](https://github.com/asigalov61/tegridy-tools)** and **[X-Transformer](https://github.com/lucidrains/x-transformers)**.
+<div align="center">
 
-Contributions are welcome! Please open an issue or submit a pull request.
+### **Built on the Shoulders of Giants**
+
+This project leverages incredible open-source work from:
+
+[![tegridy-tools](https://img.shields.io/badge/tegridy--tools-🎵-blue?style=for-the-badge)](https://github.com/asigalov61/tegridy-tools)
+[![X-Transformer](https://img.shields.io/badge/X--Transformer-🤖-green?style=for-the-badge)](https://github.com/lucidrains/x-transformers)
+
+### **Want to Contribute?**
+
+We welcome contributions! Feel free to:
+- 🐛 Report bugs via [Issues](https://github.com/WebChatAppAi/Orpheus-Midi-Model-Maker/issues)
+- 💡 Suggest features 
+- 🔧 Submit pull requests
+- 📖 Improve documentation
+
+</div>
 
 ---
 
 <div align="center">
-  <b>🎵 Happy Music Making! 🎵</b>
+  
+  ### 🎵 **Happy Music Making!** 🎵
+  
+  <p>
+    <img src="https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge" alt="Made with Love">
+    <img src="https://img.shields.io/badge/For-Musicians-purple?style=for-the-badge" alt="For Musicians">
+  </p>
+  
 </div>
