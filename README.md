@@ -32,6 +32,13 @@ Transform your collection of MIDI files into a trained AI model that can generat
 - **Flexible Configuration**: YAML-based settings for easy customization
 - **Global Ready**: Works on any Linux system with CUDA GPU
 
+### 🎵 **New! Orpheus CLI Interface**
+- **Unified Experience**: Single entry point for all features
+- **Smart Configuration**: Auto-detects GPU and suggests optimal settings
+- **Live Dashboard**: Real-time training monitoring with progress bars
+- **Beautiful UI**: Professional terminal interface with Rich library
+- **Guided Workflow**: Step-by-step guidance through the entire process
+
 ## 📋 Requirements
 
 - **OS**: Linux (Ubuntu recommended)
@@ -46,9 +53,23 @@ Transform your collection of MIDI files into a trained AI model that can generat
 git clone https://github.com/your-repo/MidiModel-Creator
 cd MidiModel-Creator
 bash setup.sh
+pip install -r cli/requirements.txt  # Install CLI dependencies
 ```
 
-### 2. **Create Dataset**
+### 2. **Run Unified CLI (Recommended)**
+```bash
+python app.py
+```
+
+This launches the **Orpheus Midi Model Maker** - a beautiful unified interface that guides you through:
+- 🎼 Creating datasets from MIDI files
+- ✅ Validating your datasets
+- 🚀 Training with auto-configured settings
+- 📊 Live training dashboard with real-time metrics
+
+### Alternative: Use Individual Scripts
+
+#### Create Dataset
 ```bash
 cd DatasetCreation
 python start.py
@@ -56,7 +77,7 @@ python start.py
 # Provide path to your MIDI files
 ```
 
-### 3. **Train Model**
+#### Train Model
 ```bash
 cd ../TrainingModel
 python app.py
@@ -70,16 +91,24 @@ Your trained model will automatically generate sample MIDI files during training
 
 ```
 MidiModel-Creator/
+├── app.py                # New! Unified CLI entry point
+├── cli/                  # New! CLI interface modules
+│   ├── menu.py          # Main menu system
+│   ├── dataset_cli.py   # Dataset management
+│   ├── training_cli.py  # Training management
+│   ├── config_generator.py # Auto-configuration
+│   ├── dashboard.py     # Live training monitor
+│   └── utils.py         # Shared utilities
 ├── setup.sh              # One-time setup script
-├── DATA/                  # Processed datasets
-├── DatasetCreation/       # MIDI processing tools
-│   ├── start.py          # Main interface
-│   ├── processdata.py    # MIDI processor
-│   └── verifydata.py     # Dataset validator
-└── TrainingModel/         # AI training module
-    ├── app.py            # Training interface
-    ├── config.py         # Configuration manager
-    ├── trainer.py        # Training engine
+├── DATA/                 # Processed datasets
+├── DatasetCreation/      # MIDI processing tools
+│   ├── start.py         # Main interface
+│   ├── processdata.py   # MIDI processor
+│   └── verifydata.py    # Dataset validator
+└── TrainingModel/        # AI training module
+    ├── app.py           # Training interface
+    ├── config.py        # Configuration manager
+    ├── trainer.py       # Training engine
     └── sample_config.yml # Example settings
 ```
 
