@@ -1,8 +1,10 @@
 # 🎵 MidiModel-Creator
 
+![Orpheus CLI Interface](image1.png)
+
 **Create AI melody generators from your MIDI files!**
 
-Transform your collection of MIDI files into a trained AI model that can generate new melodies in the same style. Perfect for musicians, composers, and AI enthusiasts who want to create personalized music generation models.
+Transform your collection of MIDI files into a trained AI model that can generate new melodies in the same style. Perfect for musicians, composers, and AI enthusiasts who want to create personalized m[...]
 
 ## ✨ What This Project Does
 
@@ -50,8 +52,8 @@ Transform your collection of MIDI files into a trained AI model that can generat
 
 ### 1. **Setup**
 ```bash
-git clone https://github.com/your-repo/MidiModel-Creator
-cd MidiModel-Creator
+git clone https://github.com/WebChatAppAi/Orpheus-Midi-Model-Maker
+cd Orpheus-Midi-Model-Maker
 bash setup.sh
 pip install -r cli/requirements.txt  # Install CLI dependencies
 ```
@@ -194,9 +196,9 @@ output:
 
 ## 🛠️ Troubleshooting
 
-**Out of Memory?** → Reduce `batch_size` and `seq_len` in config
-**No MIDI files found?** → Check file extensions (.mid, .midi)
-**Poor quality output?** → Increase training time or improve input data quality
+**Out of Memory?** → Reduce `batch_size` and `seq_len` in config  
+**No MIDI files found?** → Check file extensions (.mid, .midi)  
+**Poor quality output?** → Increase training time or improve input data quality  
 **Training too slow?** → Increase `batch_size` if you have more GPU memory
 
 ## 🤝 Contributing
